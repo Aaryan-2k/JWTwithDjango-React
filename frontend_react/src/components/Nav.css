@@ -1,0 +1,22 @@
+.nav-bar{
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    height:75px;
+    background:linear-gradient(rgb(14, 40, 72),rgb(2, 22, 47));
+    border-bottom: 2px solid rgb(184, 192, 200);
+}
+.nav-bar button{
+    color:white;
+    font-size:large;
+    background-color:rgba(2, 22, 47,0);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border:1px solid white;
+}

@@ -1,0 +1,9 @@
+.footer-container{
+    background:linear-gradient(rgb(14, 40, 72),rgb(2, 22, 47));
+     height:100px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color:white;
+}
+

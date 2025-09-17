@@ -8,6 +8,7 @@ export default function Register(){
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
     const [confirmpassword, setConfirmpassword]=useState('');
+    const [errors, setErrors]=useState({});
 
     function emailHandler(event){
         setEmail(event.target.value)
@@ -33,6 +34,7 @@ export default function Register(){
         }
         catch(error){
             console.log(error.response.data)
+            setErrors(error.response.data)
         }
 
     }
@@ -43,8 +45,11 @@ return(
             <h1>SIGNUP</h1>
             <form onSubmit={(e)=>{handleRegistration(e)}}>
             <input type='email' name='email' placeholder='Enter Email' value={email} onChange={(e)=>{emailHandler(e)}} required></input>
+            {errors.email && <p className='error'>{errors.email}</p>}
             <input type='text' name='username' placeholder='Enter Username' value={username} onChange={(e)=>{usernameHandler(e)}} required></input>
+            {errors.username && <p className='error'>{errors.username}</p>}
             <input type='password' name='password' placeholder='Enter Password' value={password} onChange={(e)=>{passwordHandler(e)}} required></input>
+            {errors.password && <p className='error'>{errors.password}</p>}
             <input type='password' name='confirm-password' placeholder='Confirm password' value={confirmpassword} onChange={(e)=>{confirmpasswordHandler(e)}} required></input>
             <button type='submit'>Register</button>
             </form>

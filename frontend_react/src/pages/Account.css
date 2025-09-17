@@ -1,0 +1,8 @@
+.account-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color:white;
+    background: linear-gradient(to right, #2a0056 0%, #001436 100%);
+}

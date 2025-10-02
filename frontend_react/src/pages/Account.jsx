@@ -2,17 +2,14 @@ import React from 'react'
 import './Account.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import axiosInstance from '../axosInstance'
 
 export default function Account(){
     const [message, setMessage]=useState("");
 
     async function protectedView(){
         try{
-            const response=await axios.get('https://bookish-parakeet-jj5g775prrp53pgg5-8000.app.github.dev/api/protected_view/',{
-                headers:{
-                    Authorization:`Bearer ${localStorage.getItem('access_token')}`
-                }
-            })
+            const response=await axiosInstance.get('/api/protected_view/')
             setMessage(response.data.message)
         }
         catch(error){
